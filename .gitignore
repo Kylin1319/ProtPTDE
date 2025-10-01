@@ -1,0 +1,33 @@
+# result
+*.csv
+*.pdf
+*.html
+
+# Model parameters
+*.pth
+*.pt
+
+# Logs
+log/
+*.log
+
+
+
+# pycache
+__pycache__/
+*.pyc
+
+
+#history
+.history/
+
+
+#SPIRED
+spired_fitness_embedding/
+
+
+#other
+build/
+source/
+make.bat
+Makefile

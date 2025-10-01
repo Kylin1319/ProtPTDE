@@ -1,0 +1,77 @@
+{
+  "basic_data_name": "data_20250312",
+  "single_model_embedding_output_dim": 64,
+  "all_model": {
+    "esm2_650m": {
+      "shape": 1280
+    },
+    "esmc_300m": {
+      "shape": 960
+    },
+    "spired_fitness": {
+      "shape": 32
+    }
+  },
+  "cross_validation": {
+    "hyperparameter_search": {
+      "num_layer": {
+        "type": "int",
+        "min": 1,
+        "max": 5
+      },
+      "max_lr": {
+        "type": "categorical",
+        "choices": [
+          0.0001,
+          0.0005
+        ]
+      }
+    },
+    "model_number": 2,
+    "training_parameter": {
+      "device": 0,
+      "min_lr": 5e-06,
+      "initial_lr": 1e-06,
+      "total_epochs": 200,
+      "warmup_epochs_ratio": 0.1,
+      "batch_size": 16,
+      "test_size": 0.2,
+      "k_fold": 5,
+      "shuffle": true
+    }
+  },
+  "best_hyperparameters": {
+    "selected_models": [
+      "esm2_650m",
+      "esmc_300m"
+    ],
+    "num_layer": 3,
+    "max_lr": 0.0005,
+    "random_seed": 81
+  },
+  "ensemble_size": 5,
+  "final_model": {
+    "train_parameter": {
+      "device": 0,
+      "min_lr": 5e-06,
+      "initial_lr": 1e-06,
+      "total_epochs": 200,
+      "warmup_epochs_ratio": 0.1,
+      "batch_size": 16,
+      "test_size": 0.2
+    },
+    "finetune_parameter": {
+      "finetune_max_lr": 0.5,
+      "device": 0,
+      "min_lr": 0.001,
+      "initial_lr": 0.001,
+      "total_epochs": 200,
+      "warmup_epochs_ratio": 0.1,
+      "batch_size": 1000,
+      "test_size": 0.2
+    }
+  },
+  "inference": {
+    "max_mutations": 10000
+  }
+}
