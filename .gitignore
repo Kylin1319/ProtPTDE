@@ -27,6 +27,7 @@ spired_fitness_embedding/
 
 
 #other
+build/
 01_cross_validation_1/
 02_final_model_1/
 03_inference_1/
