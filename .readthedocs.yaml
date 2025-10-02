@@ -6,6 +6,9 @@ build:
   tools:
     python: "3.13"
 
+  install:
+    - pip install -r requirements.txt  # 告诉 Read the Docs 安装这些包
+
 
 sphinx:
    configuration: doc/source/conf.py
