@@ -8,7 +8,7 @@ build:
 
 python:
   install:
-    - pip install -r doc/requirements.txt
+    - requirements: doc/requirements.txt
 
 
 sphinx:
