@@ -6,6 +6,7 @@ build:
   tools:
     python: "3.13"
 
+python:
   install:
     - pip install -r doc/requirements.txt  # 告诉 Read the Docs 安装这些包
 
