@@ -8,7 +8,7 @@ build:
 
 python:
   install:
-    - pip install -r doc/requirements.txt  # 告诉 Read the Docs 安装这些包
+    - pip install -r doc/requirements.txt
 
 
 sphinx:
