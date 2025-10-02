@@ -1,5 +1,7 @@
 <h1 align="center">ProtPTDE</h1>
 
+- **Documentation** [![Documentation badge](https://img.shields.io/readthedocs/tidymut/latest?logo=readthedocs&logoColor=white)](https://tidymut.readthedocs.io/en/): https://protptde-usage-guidelines.readthedocs.io/en/latest/
+
 ProtPTDE (Protein Pre-Training Model-Assisted Protein Directed Evolution) is a computational strategy designed to assist protein directed evolution by integrating multiple deep learning models. A key design highlight of this framework lies in its streamlined parameter management: we have centralized the majority of parameters and hyperparameters involved in the entire architectural workflow and fitness prediction framework into a single configuration file, `config/config.json`.  
 
 This centralized structure enables **unified parameter governance**: when users need to adjust a parameter, they only need to modify the target entry in `config.json`—the system will automatically sync this update across all associated scripts. This eliminates the cumbersome, error-prone process of manually searching through multiple files to modify parameters individually, thereby achieving highly centralized control and automated parameter tuning.  
