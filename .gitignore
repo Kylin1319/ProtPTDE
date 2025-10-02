@@ -27,7 +27,11 @@ spired_fitness_embedding/
 
 
 #other
-build/
-source/
-make.bat
-Makefile
+01_cross_validation_1/
+02_final_model_1/
+03_inference_1/
+config_1/
+data_1/
+features_1/
+generate_features_1/
+
