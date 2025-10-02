@@ -1,7 +1,7 @@
 # result
 *.csv
 *.pdf
-*.html
+
 
 # Model parameters
 *.pth
