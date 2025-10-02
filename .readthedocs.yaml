@@ -7,7 +7,7 @@ build:
     python: "3.13"
 
   install:
-    - pip install -r requirements.txt  # 告诉 Read the Docs 安装这些包
+    - pip install -r doc/requirements.txt  # 告诉 Read the Docs 安装这些包
 
 
 sphinx:
