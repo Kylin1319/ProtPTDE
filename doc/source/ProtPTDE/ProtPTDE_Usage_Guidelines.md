@@ -1,7 +1,7 @@
-# Usage Guidelines
 
 
-## Overview
+
+# Overview
 
 ProtPTDE (Protein Pre-Training Model-Assisted Protein Directed Evolution) is a computational strategy designed to assist protein directed evolution by integrating multiple deep learning models. A key design highlight of this framework lies in its streamlined parameter management: we have centralized the majority of parameters and hyperparameters involved in the entire architectural workflow and fitness prediction framework into a single configuration file, `config/config.json`.  
 
@@ -13,7 +13,7 @@ Furthermore, we have prioritized **framework extensibility** to accommodate dive
 
 
 
-## Prerequisites
+# Prerequisites
 
 1. install `Anaconda` / `Miniconda` software
 
@@ -39,7 +39,7 @@ pip install seaborn
 pip install plotly
 ```
 
-## File Preparation
+# File Preparation
 
 The model requires three essential input files:
 
@@ -48,9 +48,9 @@ The model requires three essential input files:
 * A ``config.json`` file in the ``config/`` directory is used to manage all file parameters. You can use this project's config.json file directly and adjust it to your needs.
 
 
-## Basic Usage
+# Basic Usage
 
-### Processing data and configuring parameters
+## Processing data and configuring parameters
 
 We need to have an xlsx file with two columns. The first column is the mutation information in the form of ``F282L, R11H``, and the second column is the fitness label value (numeric). Change the value of the key **basic_data_name** in the ``config/config.json`` to the name of the mutation_data_file (without the extension).
 
@@ -82,7 +82,7 @@ The following is an explanation of the parameters in ``config.json``:
 **inference**: The **inference** section involves only the **max_mutations** parameter, which indicates the maximum number of possible mutant proteins to be generated and inferred for classes with the same number of mutation sites. Any part exceeding this number will not be generated.
 
 
-### generating embeddings
+## generating embeddings
 
 If you don't need to add other models, you can run the following code:
 
@@ -94,7 +94,7 @@ cd ../
 
 If you need to add other models, you can create a ``{model}_embedding`` folder, imitate the script provided in the project to write the corresponding ``function.py`` script for the model you added, and then run the above code.
 
-### cross validation
+## cross validation
 
 Before concatenating multiple model embeddings, determine the output dimension of the linear transformation for single model and write it to the **single_model_embedding_output_dim** key in the ``config/config.json`` file. At the same time, modify the desired configuration parameters under the **cross_validation** key in the ``config/config.json``. 
 
@@ -111,7 +111,7 @@ cd ../
 
 Select the best hyperparameters from the displot (``Dis_cross_validation.pdf``) and write them in **best_hyperparameters** key in the ``config/config.json``. They are **selected_models**, **num_layer** and **max_lr**.
 
-### train and finetune
+## train and finetune
 
 Adjust the number of model training runs and write it to the **ensemble_size** key in the ``config/config.json``. The training parameters are the same each time, except for model initialization and the batch order of training data provided by DataLoader. The results are saved independently and finally merged and analyzed to evaluate the stability of the final prediction results.
 
@@ -138,7 +138,7 @@ bash 05_finetune_ensemble.sh
 cd ../
 ```
 
-### inference
+## inference
 
 Determine the maximum number of mutation combinations and write it to the **max_mutations** key in the **inference** section of ``config/config.json``. Then you can run the following code:
 
@@ -157,4 +157,5 @@ cd 03_inference
 bash 04_get_cluster_csv.sh
 cd ../
 ```
+
 
